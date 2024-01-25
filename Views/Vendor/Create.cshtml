@@ -1,0 +1,116 @@
+﻿@model studentfest.Models.Vendor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Vendor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VendorTitle" class="control-label"></label>
+                <input asp-for="VendorTitle" class="form-control" />
+                <span asp-validation-for="VendorTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorFirstName" class="control-label"></label>
+                <input asp-for="VendorFirstName" class="form-control" />
+                <span asp-validation-for="VendorFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorLastName" class="control-label"></label>
+                <input asp-for="VendorLastName" class="form-control" />
+                <span asp-validation-for="VendorLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorEmailAddresss" class="control-label"></label>
+                <input asp-for="VendorEmailAddresss" class="form-control" />
+                <span asp-validation-for="VendorEmailAddresss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorIdNumber" class="control-label"></label>
+                <input asp-for="VendorIdNumber" class="form-control" />
+                <span asp-validation-for="VendorIdNumber" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.StreetName" class="control-label"></label>
+                <input asp-for="ResidentalAddress.StreetName" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.StreetName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.HouseNumber" class="control-label"></label>
+                <input asp-for="ResidentalAddress.HouseNumber" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.HouseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.suburb" class="control-label"></label>
+                <input asp-for="ResidentalAddress.suburb" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.suburb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.City" class="control-label"></label>
+                <input asp-for="ResidentalAddress.City" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.Region" class="control-label"></label>
+                <input asp-for="ResidentalAddress.Region" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.PostalCode" class="control-label"></label>
+                <input asp-for="ResidentalAddress.PostalCode" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResidentalAddress.Country" class="control-label"></label>
+                <input asp-for="ResidentalAddress.Country" class="form-control" />
+                <span asp-validation-for="ResidentalAddress.Country" class="text-danger"></span>
+            </div>
+          <div class="col-12">
+                <div class="form-group col-2">
+                    <label asp-for="ContactDetails.CountryCode" class="control-label"></label>
+                    <input asp-for="ContactDetails.CountryCode" class="form-control" />
+                    <span asp-validation-for="ContactDetails.CountryCode" class="text-danger"></span>
+                </div>
+                <div class="form-group col-10">
+                    <label asp-for="ContactDetails.MobileNumber" class="control-label"></label>
+                    <input asp-for="ContactDetails.MobileNumber" class="form-control" />
+                    <span asp-validation-for="ContactDetails.MobileNumber" class="text-danger"></span>
+                </div>
+          </div>
+            <div class="form-group">
+                <label asp-for="ContactDetails.AlternativeNumber" class="control-label"></label>
+                <input asp-for="ContactDetails.AlternativeNumber" class="form-control" />
+                <span asp-validation-for="ContactDetails.AlternativeNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactDetails.AlternativeEmailAddress" class="control-label"></label>
+                <input asp-for="ContactDetails.AlternativeEmailAddress" class="form-control" />
+                <span asp-validation-for="ContactDetails.AlternativeEmailAddress" class="text-danger"></span>
+            </div>
+         @*    <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ApprovedVendor" /> @Html.DisplayNameFor(model => model.ApprovedVendor)
+                </label>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

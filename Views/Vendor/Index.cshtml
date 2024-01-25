@@ -1,0 +1,119 @@
+﻿@model IEnumerable<studentfest.Models.Vendor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorEmailAddresss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorIdNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApprovedVendor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetails.AlternativeNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetails.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactDetails.AlternativeEmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentalAddress.HouseNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentalAddress.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentalAddress.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentalAddress.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentalAddress.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResidentalAddress.Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorEmailAddresss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorIdNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedVendor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetails.AlternativeNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetails.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDetails.AlternativeEmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResidentalAddress.HouseNumber)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResidentalAddress.StreetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResidentalAddress.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResidentalAddress.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResidentalAddress.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResidentalAddress.Country)
+                </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
